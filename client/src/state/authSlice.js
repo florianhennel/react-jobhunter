@@ -10,7 +10,7 @@ export const authSlice = createSlice({
     reducers: {
         login(state, {payload}) {
             state.user = payload.user;
-            state.token = payload.token;
+            state.token = payload.accessToken;
         },
         logout(state) {
             state.user = null;
@@ -20,9 +20,13 @@ export const authSlice = createSlice({
     extraReducers: (builder) => {
         builder.addMatcher(authApiSlice.endpoints.login.matchFulfilled, (state, {payload}) => {
             state.user = payload.user;
-            state.token = payload.token;
+            state.token = payload.accessToken;
+            console.log(payload.user);
         })
     }
 })
+export const selectUser = (state) =>{
+    return state.auth.user;
+}
 
 export const { login, logout} = authSlice.actions;
