@@ -1,4 +1,8 @@
+import Filter from "./Fitler";
 export default function Search() {
+  const handleSearch = ()=>{
+
+  }
   return (
     <div className="flex flex-col gap-2 justify-center w-1/2">
       <div className=" card-title">Böngéssz az állások között:</div>
@@ -18,8 +22,8 @@ export default function Search() {
             />
           </svg>
         </label>
-        <button className="btn btn-primary">Search</button>
-        <button className="btn btn-primary">Filter</button>
+        <button className="btn btn-primary" onClick={handleSearch}>Search</button>
+        <Filter />
       </div>
     </div>
   );

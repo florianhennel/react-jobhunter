@@ -23,6 +23,12 @@ export const jobsSlice = createSlice({
             state.limit = payload.limit;
             state.skip = payload.skip;
             state.data = payload.data;
+        }),
+        builder.addMatcher(jobsApiSlice.endpoints.getFilteredJobs.matchFulfilled,(state, {payload})=>{
+            state.total = payload.total;
+            state.limit = payload.limit;
+            state.skip = payload.skip;
+            state.data = payload.data;
         })
     }
 

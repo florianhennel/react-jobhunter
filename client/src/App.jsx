@@ -2,25 +2,26 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "./state/authSlice";
 import { Link } from "react-router-dom";
 import Navbar from "./views/Navbar";
 import Search from "./views/Jobs/Search";
 import Job from "./views/Jobs/Job";
-import { useGetAllJobsQuery } from "./state/jobsApiSlice";
+import { useGetAllJobsQuery, useGetFilteredJobsQuery } from "./state/jobsApiSlice";
+import { selectFilters } from "./state/filterSlice";
 
 export default function App() {
-  const [count, setCount] = useState(0);
   const user = useSelector(selectUser);
+  const filters = useSelector(selectFilters);
+  console.log(filters);
   const {
     data: { total, limit, skip, data } = {},
     isLoading,
     isError,
     isSuccess,
-  } = useGetAllJobsQuery();
+  } = useGetFilteredJobsQuery(filters);
   if (data) {
-    console.log(data);
     return (
       <div className="w-full">
         <Navbar />
