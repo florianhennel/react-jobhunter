@@ -8,6 +8,6 @@ export default {
         require('daisyui'),
     ],
     daisyui: {
-        themes: ["light", "dark", "buisness"],
+        themes: ["light", "dark", "business"],  
       },
 };
