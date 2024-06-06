@@ -7,6 +7,7 @@ import { filterSlice } from "./filterSlice";
 import { registerApiSlice } from "./registerApiSlice";
 import { experienceApiSlice } from "./experienceApiSlice";
 import { experienceSlice } from "./experineceSlice";
+import { applicantsApiSlice } from "./applicantsApiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +18,8 @@ export const store = configureStore({
     [filterSlice.name]: filterSlice.reducer,
     [registerApiSlice.reducerPath]: registerApiSlice.reducer,
     [experienceApiSlice.reducerPath]: experienceApiSlice.reducer,
-    [experienceSlice.name]:experienceSlice.reducer
+    [experienceSlice.name]:experienceSlice.reducer,
+    [applicantsApiSlice.reducerPath]:applicantsApiSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
@@ -25,4 +27,5 @@ export const store = configureStore({
       .concat(jobsApiSlice.middleware)
       .concat(registerApiSlice.middleware)
       .concat(experienceApiSlice.middleware)
+      .concat(applicantsApiSlice.middleware)
 });
