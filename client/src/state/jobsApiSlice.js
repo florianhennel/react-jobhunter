@@ -10,6 +10,9 @@ export const jobsApiSlice = createApi({
         getAllJobs:builder.query({
             query: ()=> "",   
         }),
+        getOneJob:builder.query({
+            query: ({id})=> `${id}`,   
+        }),
         getFilteredJobs:builder.query({
             query:(filters)=>filterBuilder(filters),
             providesTags:['jobs']
@@ -48,4 +51,4 @@ const filterBuilder = (filters)=>{
         return string.substring(0,(string.length-1));
     }
 }
-export const { useGetAllJobsQuery, useGetFilteredJobsQuery } = jobsApiSlice;
+export const { useGetAllJobsQuery, useGetFilteredJobsQuery, useGetOneJobQuery } = jobsApiSlice;
