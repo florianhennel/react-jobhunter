@@ -4,16 +4,25 @@ import { authSlice } from "./authSlice";
 import { jobsSlice } from "./jobsSlice";
 import { jobsApiSlice } from "./jobsApiSlice";
 import { filterSlice } from "./filterSlice";
+import { registerApiSlice } from "./registerApiSlice";
+import { experienceApiSlice } from "./experienceApiSlice";
+import { experienceSlice } from "./experineceSlice";
 
 export const store = configureStore({
-    reducer:{
-        [authSlice.name] : authSlice.reducer,
-        [authApiSlice.reducerPath] : authApiSlice.reducer,
-        [jobsSlice.name]:jobsSlice.reducer,
-        [jobsApiSlice.reducerPath]:jobsApiSlice.reducer,
-        [filterSlice.name]:filterSlice.reducer,
-    },
-    middleware: (getDefaultMiddleware)=>(
-        getDefaultMiddleware().concat(authApiSlice.middleware).concat(jobsApiSlice.middleware)
-    )
-})
+  reducer: {
+    [authSlice.name]: authSlice.reducer,
+    [authApiSlice.reducerPath]: authApiSlice.reducer,
+    [jobsSlice.name]: jobsSlice.reducer,
+    [jobsApiSlice.reducerPath]: jobsApiSlice.reducer,
+    [filterSlice.name]: filterSlice.reducer,
+    [registerApiSlice.reducerPath]: registerApiSlice.reducer,
+    [experienceApiSlice.reducerPath]: experienceApiSlice.reducer,
+    [experienceSlice.name]:experienceSlice.reducer
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware()
+      .concat(authApiSlice.middleware)
+      .concat(jobsApiSlice.middleware)
+      .concat(registerApiSlice.middleware)
+      .concat(experienceApiSlice.middleware)
+});
