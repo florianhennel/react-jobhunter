@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "./state/authSlice";
 import { Link } from "react-router-dom";
 import Navbar from "./views/Navbar";
-import Search from "./views/Jobs/Search";
-import Job from "./views/Jobs/Job";
+import Search from "./views/Frontpage/Search";
+import Job from "./views/Frontpage/Job";
 import {
   useGetFilteredJobsQuery,
 } from "./state/jobsApiSlice";

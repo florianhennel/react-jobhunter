@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import Data from "./Data";
+import Data from "./ProfileData";
 import { useGetExperienceQuery } from "../../state/experienceApiSlice";
-import JobData from "./JobData";
+import JobData from "./ExperienceData";
 import { editExperiences } from "../../state/experineceSlice";
 
 export default function Profil() {

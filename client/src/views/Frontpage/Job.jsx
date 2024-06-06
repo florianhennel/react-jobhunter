@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Job({ details }) {
   const {
@@ -21,7 +22,7 @@ export default function Job({ details }) {
     }).format(number);
   };
   return (
-    <div className="card card-compact w-1/2 bg-neutral shadow-xl">
+    <Link className="card card-compact w-1/2 bg-neutral shadow-xl" to={`/jobs/${id}`} >
       <div className="card-body flex-row justify-between">
         <div className="flex flex-col justify-between">
           <h2 className="card-title">{position}</h2>
@@ -34,6 +35,6 @@ export default function Job({ details }) {
           <div className=" capitalize self-end">{type}</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
