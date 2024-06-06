@@ -9,6 +9,7 @@ import Login from "./views/Login.jsx";
 import RequireAuth from "./RequireAuth.jsx";
 import Register from "./views/Register.jsx";
 import Profil from "./views/Profil/Profil.jsx";
+import JobPosting from "./views/Job/JobPosting.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profil" element={<Profil />}></Route>
+          <Route path="/jobs/:id" element={<JobPosting />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>
