@@ -14,7 +14,7 @@ export const authApiSlice = createApi({
                     strategy: "local",
                 },
             })
-        })
+        }),
     })
 })
 
