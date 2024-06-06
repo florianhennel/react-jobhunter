@@ -8,11 +8,12 @@ import { Link } from "react-router-dom";
 import Navbar from "./views/Navbar";
 import Search from "./views/Jobs/Search";
 import Job from "./views/Jobs/Job";
-import { useGetAllJobsQuery, useGetFilteredJobsQuery } from "./state/jobsApiSlice";
+import {
+  useGetFilteredJobsQuery,
+} from "./state/jobsApiSlice";
 import { selectFilters } from "./state/filterSlice";
 
 export default function App() {
-  const user = useSelector(selectUser);
   const filters = useSelector(selectFilters);
   console.log(filters);
   const {
@@ -27,7 +28,7 @@ export default function App() {
         <Navbar />
         <div className="flex flex-col justify-center items-center gap-10">
           <Search />
-          <div className="w-full flex justify-center gap-3">
+          <div className="w-full flex items-center justify-center gap-3 flex-col">
             {data.map((job, index) => (
               <Job key={index} details={job} />
             ))}
