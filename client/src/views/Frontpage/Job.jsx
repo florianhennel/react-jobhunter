@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function Job({ details }) {
@@ -21,8 +22,9 @@ export default function Job({ details }) {
       maximumFractionDigits: 0,
     }).format(number);
   };
+  const user = useSelector(state=>state.auth.user)
   return (
-    <Link className="card card-compact w-1/2 bg-neutral shadow-xl" to={`/jobs/${id}`} >
+    <Link className="card card-compact w-1/2 bg-neutral shadow-xl" to={user?`/jobs/${id}`:''} >
       <div className="card-body flex-row justify-between">
         <div className="flex flex-col justify-between">
           <h2 className="card-title">{position}</h2>
