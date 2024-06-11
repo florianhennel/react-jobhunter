@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-export default function Data({title}){
+export default function ProfileData({title}){
     const { id, email, fullname, role } = useSelector((state) => state.auth.user);
     return(
         <div className=" flex w-full">
