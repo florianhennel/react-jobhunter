@@ -23,7 +23,6 @@ export default function OwnJob({ details }) {
   } = details;
   
   const [showApplicants, setShowApplicants] = useState(false);
-  const [apiModifyJob] = useModifyJobMutation();
   const [apiDeleteJob] = useDeleteJobMutation();
   const { data, isLoading, isError, isSuccess } = useGetApplicantsForAJobQuery(
     { id: id, token: token },

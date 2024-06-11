@@ -2,9 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useModifyExperienceMutation } from "../../state/experienceApiSlice";
 
-export default function JobData({ job }) {
-  const dispatch = useDispatch();
-  const experiences = useSelector((state) => state.experience.experiences);
+export default function ExperienceData({ job }) {
+
   const token = useSelector(state=>state.auth.token);
   const [apiEditExperiences] = useModifyExperienceMutation();
 
