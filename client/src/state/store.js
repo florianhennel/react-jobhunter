@@ -8,6 +8,7 @@ import { registerApiSlice } from "./registerApiSlice";
 import { experienceApiSlice } from "./experienceApiSlice";
 import { experienceSlice } from "./experineceSlice";
 import { applicantsApiSlice } from "./applicantsApiSlice";
+import { inputErrorSlice } from "./inputErrorSlice";
 
 export const store = configureStore({
   reducer: {
@@ -19,7 +20,8 @@ export const store = configureStore({
     [registerApiSlice.reducerPath]: registerApiSlice.reducer,
     [experienceApiSlice.reducerPath]: experienceApiSlice.reducer,
     [experienceSlice.name]:experienceSlice.reducer,
-    [applicantsApiSlice.reducerPath]:applicantsApiSlice.reducer
+    [applicantsApiSlice.reducerPath]:applicantsApiSlice.reducer,
+    [inputErrorSlice.name] : inputErrorSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
